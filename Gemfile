@@ -12,6 +12,8 @@ gem "rails", "~> 5.1.5"
 gem "mysql2", ">= 0.3.18", "< 0.5"
 # Use Puma as the app server
 gem "puma", "~> 3.7"
+# Use bootstrap
+gem "bootstrap-sass"
 # Use SCSS for stylesheets
 gem "sass-rails", "~> 5.0"
 # Use Uglifier as compressor for JavaScript assets
@@ -35,11 +37,15 @@ gem "jbuilder", "~> 2.5"
 
 # Use figaro
 gem "figaro"
-
 # Use factory girl for test
 gem "factory_girl"
 gem "factory_girl_rails"
-
+# Use jquery
+gem "jquery-rails"
+# Use I18n in js
+gem "i18n-js"
+# Use setting
+gem "config"
 
 group :development, :test do
   # Call "byebug" anywhere in the code to stop execution and get a debugger console
@@ -66,4 +72,6 @@ gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 group :test do
   gem "rspec-rails", "~> 3.4"
   gem "shoulda-matchers", "~> 3.0"
+  gem "faker"
+  gem "rails-controller-testing"
 end

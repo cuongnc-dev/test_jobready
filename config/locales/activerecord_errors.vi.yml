@@ -1,0 +1,20 @@
+vi:
+  dictionary:
+    blank: &blank "không được để trống"
+  activerecord:
+    attributes:
+      product:
+        name: "Tên sản phẩm"
+        price: "Gía sản phẩm"
+    errors:
+      models:
+        product:
+          attributes:
+            name:
+              too_long: "tối đa %{count} ký tự"
+              too_short: "tối thiểu %{count} ký tự"
+              blank: *blank
+            price:
+              blank: *blank
+              greater_than: "phải lớn hơn %{count}"
+              not_a_number: "chỉ chấp nhận số"

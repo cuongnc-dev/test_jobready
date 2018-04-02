@@ -1,0 +1,20 @@
+vi:
+  dictionary:
+    blank: &blank "can not blank"
+  activerecord:
+    attributes:
+      product:
+        name: "Product name"
+        price: "Product price"
+    errors:
+      models:
+        product:
+          attributes:
+            name:
+              too_long: "maximum is %{count} characters"
+              too_short: "minimum  is %{count} characters"
+              blank: *blank
+            price:
+              blank: *blank
+              greater_than: "must greater than %{count}"
+              not_a_number: "only accept number"

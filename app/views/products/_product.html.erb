@@ -1,0 +1,17 @@
+<div class="col-md-3 col-sm-4 col-xs-6" data-product-id="<%= product.id %>">
+  <div class="item relative">
+    <p class="product-name">
+      <%= product.name %>
+      <%= link_to "", product, method: :delete, data: {confirm: t("are_you_sure")}, remote: true,
+        class: "glyphicon glyphicon-minus-sign remove-product" %>
+    </p>
+    <p class="product-price">
+      $<%= product.price %>
+      <span class="glyphicon glyphicon-shopping-cart pull-right add-shopping-cart
+        <%= session[:cart].key?(product.id.to_s) ? 'hide' : '' %>"
+        title="<%= t '.add_shopping_cart' %>" data-product-name="<%= product.name %>"
+        data-product-price="<%= product.price %>" data-product-tax="<%= product.tax %>"
+        data-product-type="<%= product.type_product %>"></span>
+    </p>
+  </div>
+</div>
