@@ -13,3 +13,5 @@ type:
 languages:
   vietnamese: {name: "Tiếng Việt", image: "vi.png", type: "vi"}
   english: {name: "English", image: "en.png", type: "en"}
+export_type:
+  pdf: "pdf"

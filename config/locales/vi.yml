@@ -4,6 +4,7 @@ vi:
   are_you_sure: "Bạn muốn xóa sản phẩm này?"
   sales_taxes: "Thuế doanh thu:"
   not_have_product_in_cart: "Bạn chưa thêm sản phẩm nào vào giỏ hàng"
+  export_pdf: "Xuất tệp PDF"
   layouts:
     application:
       company: "JobReady"
@@ -28,3 +29,19 @@ vi:
     create:
       create_success: "Thêm mới sản phẩm thành công"
       create_fail: "Thêm mới sản phẩm thất bại"
+  export_pdfs:
+    show:
+      export_cart: "Giỏ hàng"
+      detail_cart: "Chi tiết giỏ hàng của bạn"
+      date_export: "Ngày xuất: %{date}"
+      cart_not_product: "Bạn chưa thêm sản phẩm nào vào giỏ hàng"
+      stt: "STT"
+      product_name: "Tên sản phẩm"
+      unit_price: "Gía đơn vị"
+      quantity: "Số lượng"
+      tax: "Thuế (%)"
+      type: "Loại sản phẩm"
+      tax_sale: "Thuế doanh thu"
+      total: "Tổng tiền"
+      inland: "Nội địa"
+      export: "Nhập khẩu"

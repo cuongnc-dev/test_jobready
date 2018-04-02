@@ -4,6 +4,7 @@ en:
   are_you_sure: "You want delete this product?"
   sales_taxes: "Sales taxes:"
   not_have_product_in_cart: "You aren't add any product to cart"
+  export_pdf: "Export PDF"
   layouts:
     application:
       company: "JobReady"
@@ -28,3 +29,19 @@ en:
     create:
       create_success: "Create product success"
       create_fail: "Create product fail"
+  export_pdfs:
+    show:
+      export_cart: "Cart"
+      detail_cart: "Your cart details"
+      date_export: "Date export: %{date}"
+      cart_not_product: "You don't add any product to cart"
+      stt: "No."
+      product_name: "Product name"
+      unit_price: "Unit price"
+      quantity: "Quantity"
+      tax: "Tax (%)"
+      type: "Type product"
+      tax_sale: "Tax sales"
+      total: "Total price"
+      inland: "Inland"
+      export: "Export"

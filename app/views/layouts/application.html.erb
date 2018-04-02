@@ -69,6 +69,12 @@
       <h4 class="text-center cart-not-have-product <%= session[:cart].present? ? 'hide' : '' %>">
         <%= t "not_have_product_in_cart" %>
       </h4>
+      <div class="export-pdf <%= session[:cart].present? ? '' : 'hide' %>">
+        <%= link_to export_pdfs_path(format: Settings.export_type.pdf), target: :_blank do %>
+          <span class="glyphicon glyphicon-download"></span>
+          <%= t "export_pdf" %>
+        <% end %>
+      </div>
     </div>
   </body>
 </html>
