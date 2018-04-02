@@ -1,0 +1,30 @@
+vi:
+  total_price: "Tổng tiền:"
+  save: "Lưu"
+  are_you_sure: "Bạn muốn xóa sản phẩm này?"
+  sales_taxes: "Thuế doanh thu:"
+  not_have_product_in_cart: "Bạn chưa thêm sản phẩm nào vào giỏ hàng"
+  layouts:
+    application:
+      company: "JobReady"
+  products:
+    index:
+      add_product: "Thêm sản phẩm"
+      new_product_title: "Thêm sản phẩm mới"
+    product:
+      add_shopping_cart: "Thêm vào giỏ hàng"
+    form:
+      name: "Tên sản phẩm"
+      price: "Gía sản phẩm"
+      tax: "Thuế"
+      default: "Mặc định (10%)"
+      free: "Miễn thuế"
+      type_product: "Loại sản phẩm"
+      inland: "Nội địa"
+      import: "Nhập khẩu"
+    destroy:
+      delete_success: "Xóa sản phẩm thành công"
+      delete_fail: "Xóa sản phẩm thất bại"
+    create:
+      create_success: "Thêm mới sản phẩm thành công"
+      create_fail: "Thêm mới sản phẩm thất bại"

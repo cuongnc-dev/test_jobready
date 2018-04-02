@@ -1,0 +1,12 @@
+name_product:
+  minimum: 4
+  maximum: 50
+cart_item:
+  minimum: 1
+  maximum: 20
+tax:
+  default: "default"
+  free: "free"
+type:
+  inland: "inland"
+  import: "import"

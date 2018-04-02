@@ -3,12 +3,60 @@
   <head>
     <title>TestJobready</title>
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
   </head>
 
   <body>
-    <%= yield %>
+    <div id="flash-message" class="alert"></div>
+    <header>
+      <div class="container">
+        <%= image_tag "logo", alt: t(".company") %>
+        <span class="glyphicon glyphicon-shopping-cart pull-right shopping-cart"></span>
+      </div>
+    </header>
+    <div class="container">
+      <%= yield %>
+    </div>
+    <div class="container-shopping-item">
+      <div class="shopping-item">
+        <% if session[:cart].present? %>
+          <% session[:cart].each do |key, value| %>
+            <div class="cart-item" data-product-id="<%= key %>"  data-product-tax="<%= value.first["tax"] %>"
+               data-product-type="<%= value.first["type_product"] %>">
+              <p class="text-right"><span class="remove-cart-item">&times;</span></p>
+              <p><strong><%= value.first["name"] %></strong></p>
+              <p class="item-price" data-price="<%= value.first["price"] %>">
+                $<%= value.first["price"] %>
+              </p>
+              <span class="glyphicon glyphicon-minus-sign change-quantity
+                <%= value.last.to_i > Settings.cart_item.minimum ? '' : 'hide' %>"></span>
+              <input type="number" class="quantity text-center" value="<%= value.last %>" step="1" />
+              <span class="glyphicon glyphicon-plus-sign change-quantity
+                <%= value.last.to_i < Settings.cart_item.maximum ? '' : 'hide' %>"></span>
+              <p class="text-right">
+                <%= t 'sales_taxes' %>&nbsp;
+                $<span class="tax-price"><%= calculate_tax value %></span>
+                &ensp;<%= t "total_price" %>&nbsp;
+                $<span class="total-price"><%= calculate_total_price value %></span>
+              </p>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="total-price-cart-item <%= session[:cart].present? ? '' : 'hide' %>">
+        <p class="text-right">
+          <strong><%= t "sales_taxes" %></strong>
+          &nbsp;$<span class="tax-all"><%= calculate_tax_all %></span>
+        </p>
+        <p class="text-right">
+          <strong><%= t "total_price" %></strong>
+          &nbsp;$<span class="total-price-all"><%= calculate_price_all %></span>
+        </p>
+      </div>
+      <h4 class="text-center cart-not-have-product <%= session[:cart].present? ? 'hide' : '' %>">
+        <%= t "not_have_product_in_cart" %>
+      </h4>
+    </div>
   </body>
 </html>

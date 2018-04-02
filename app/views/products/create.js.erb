@@ -1,0 +1,10 @@
+<% if @success %>
+  $('.container .row').html('<%= j render @products %><div class="col-md-3 col-sm-4 col-xs-6">'
+    + '<div class="item add-new-product">'
+    + '<%= j link_to t("products.index.add_product"), new_product_path, remote: true %></div></div>');
+  $('#my-product').modal('hide');
+  $('#flash-message').removeClass('alert-danger').addClass('alert-success')
+    .html('<%= @message %>').slideDown().delay(3000).slideUp();
+<% else %>
+  $('#my-product .modal-body').html('<%= j render "form" %>')
+<% end %>
