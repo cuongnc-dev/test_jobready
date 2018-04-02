@@ -1,0 +1,18 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+#export-pdf {
+  width: 100%;
+  > thead {
+    > tr {
+      > td {
+        font-weight: bold;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.uppercase {
+  text-transform: uppercase;
+}

@@ -42,6 +42,7 @@ $(document).ready(function() {
         $('.container-shopping-item .shopping-item').append(add_product);
         $('.cart-not-have-product').addClass('hide');
         $('.total-price-cart-item').removeClass('hide');
+        $('div.export-pdf').removeClass('hide');
         this_button.addClass('hide');
         calculateTotalPriceAllProduct();
       }
@@ -79,6 +80,7 @@ $(document).ready(function() {
     if ($(document).find('.cart-item').length == 0) {
       $('.cart-not-have-product').removeClass('hide');
       $('.total-price-cart-item').addClass('hide');
+      $('div.export-pdf').addClass('hide');
     }
   });
 

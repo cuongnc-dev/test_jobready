@@ -3,6 +3,11 @@
   calculateTotalPriceAllProduct();
   $('#flash-message').removeClass('alert-danger').addClass('alert-success')
     .html('<%= @message %>').slideDown().delay(3000).slideUp();
+  if ($(document).find('.cart-item').length == 0) {
+    $('.cart-not-have-product').removeClass('hide');
+    $('.total-price-cart-item').addClass('hide');
+    $('div.export-pdf').addClass('hide');
+  }
 <% else %>
   $('#flash-message').removeClass('alert-success').addClass('alert-danger')
     .html('<%= @message %>').slideDown().delay(3000).slideUp();

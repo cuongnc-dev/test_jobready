@@ -1,0 +1,47 @@
+<% if session[:cart].present? %>
+  <h3 class="text-center uppercase"><%= t "export_pdfs.show.detail_cart" %></h3>
+  <h4 class="text-center">
+    <%= t "export_pdfs.show.date_export", date: Time.current.strftime("%H:%M:%S %d/%m/%Y") %>
+  </h4>
+  <table id="export-pdf" class="table table-bordered">
+    <thead>
+      <tr>
+        <td><%= t "export_pdfs.show.stt" %></td>
+        <td><%= t "export_pdfs.show.product_name" %></td>
+        <td><%= t "export_pdfs.show.unit_price" %></td>
+        <td><%= t "export_pdfs.show.quantity" %></td>
+        <td><%= t "export_pdfs.show.tax" %></td>
+        <td><%= t "export_pdfs.show.type" %></td>
+        <td><%= t "export_pdfs.show.tax_sale" %></td>
+        <td><%= t "export_pdfs.show.total" %></td>
+      </tr>
+    </thead>
+    <tbody>
+      <% session[:cart].each_with_index do |value, index| %>
+        <tr>
+          <td class="text-center">
+            <%= index + 1 %>
+          </td>
+          <td><%= value.last[0]["name"] %></td>
+          <td><%= value.last[0]["price"] %></td>
+          <td class="text-center"><%= value.last[1] %></td>
+          <td class="text-center">
+            <%= value.last[0]["price"] == Settings.tax.default ? "10" : "0" %>
+          </td>
+          <td class="text-center">
+            <%= t "export_pdfs.show.#{value.last[0]['type_product']}" %>
+          </td>
+          <td class="text-center">$<%= calculate_tax value.last %></td>
+          <td class="text-center">$<%= calculate_total_price value.last %></td>
+        </tr>
+      <% end %>
+      <tr>
+        <td class="text-center uppercase" colspan="6"><strong><%= t "export_pdfs.show.total" %></strong></td>
+        <td class="text-center"><strong>$<%= calculate_tax_all %></strong></td>
+        <td class="text-center"><strong>$<%= calculate_price_all %></strong></td>
+      </tr>
+    </tbody>
+  </table>
+<% else %>
+  <h4 class="text-center"><%= t "export_pdfs.show.cart_not_product" %></h4>
+<% end %>
