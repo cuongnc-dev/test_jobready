@@ -13,6 +13,18 @@
       <div class="container">
         <%= image_tag "logo", alt: t(".company") %>
         <span class="glyphicon glyphicon-shopping-cart pull-right shopping-cart"></span>
+        <div class="change-locale">
+          <ul class="list-language">
+            <% Settings.languages.each do |key, value| %>
+              <li>
+                <%= link_to url_for(locale: value.type) do %>
+                  <%= image_tag value.image %>
+                  <span class="text"><%= value.name %></span>
+                <% end %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
       </div>
     </header>
     <div class="container">
