@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $('span.shopping-cart').click(function() {
+  $(document).on('click', 'span.shopping-cart', function() {
     $(this).toggleClass('color-red');
     $('div.container-shopping-item').toggleClass('container-shopping-open');
   });

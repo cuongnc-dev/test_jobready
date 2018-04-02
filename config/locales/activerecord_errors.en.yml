@@ -1,4 +1,4 @@
-vi:
+en:
   dictionary:
     blank: &blank "can not blank"
   activerecord:

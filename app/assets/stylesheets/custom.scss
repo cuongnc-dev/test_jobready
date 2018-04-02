@@ -101,3 +101,34 @@ header {
 .remove-cart-item {
   cursor: pointer;
 }
+
+.change-locale {
+  float: right;
+  margin-right: 150px;
+  .list-language {
+    list-style: none;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    > li {
+      background-color: transparent;
+      padding: 0 15px;
+      float: left;
+      font-size: 17px;
+      line-height: 55px;
+      > a {
+        text-decoration: none;
+        color: white;
+        &:hover {
+          color: orange;
+        }
+        span {
+          display: inline-block;
+        }
+        img {
+          height: 13px;
+        }
+      }
+    }
+  }
+}
